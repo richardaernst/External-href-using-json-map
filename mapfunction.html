@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <link rel="icon" href="data:,"> <!-- blank icon -->
+      <title> json map prototype - index.html </title>
+      <script>
+
+      function funcMap(url) {
+      return new Promise((resolve, reject) => {
+          fetch(url)  // return this promise
+          .then(response => response.json())
+          //.then(json => resolve((json.results)))
+          .then(json => resolve((json)))
+
+        });
+      }
+
+      function test() {
+        url = ('./map.json')
+        funcMap(url)
+            .then(data => console.log(data))
+      }
+
+      function ref_Google() {
+        const url = 'http://localhost:8080/patches/map.json'
+        funcMap(url)
+        //.then(data => console.log(data))
+        .then(function(data) {
+          var key = "href_Google";
+          console.log(key + ' is ' + data[0][key]);
+          window.open(data[0][key],'_blank');
+        })
+      }
+
+      function ref_IBM() {
+        const url = 'http://localhost:8080/patches/map.json'
+        funcMap(url)
+        //.then(data => console.log(data))
+        .then(function(data) {
+          var key = "href_IBM";
+          console.log(key + ' is ' + data[0][key]);
+          window.open(data[0][key],'_blank');
+        })
+      }
+
+      function ref_MeWe() {
+        const url = 'http://localhost:8080/patches/map.json'
+        funcMap(url)
+        //.then(data => console.log(data))
+        .then(function(data) {
+          var key = "href_MeWe";
+          console.log(key + ' is ' + data[0][key]);
+          window.open(data[0][key],'_blank');
+        })
+      }
+
+      function ref_NewsMax() {
+        const url = 'http://localhost:8080/patches/map.json'
+        funcMap(url)
+        //.then(data => console.log(data))
+        .then(function(data) {
+          var key = "href_NewsMax";
+          console.log(key + ' is ' + data[0][key]);
+          window.open(data[0][key],'_blank');
+        })
+      }
+
+      function ref_RedHat() {
+        const url = 'http://localhost:8080/patches/map.json'
+        funcMap(url)
+        //.then(data => console.log(data))
+        .then(function(data) {
+          var key = "href_RedHat";
+          console.log(key + ' is ' + data[0][key]);
+          window.open(data[0][key],'_blank');
+        })
+      }
+
+      </script>.
+
+    </head>
+      <body>
+
+      <div id="test">
+        <br>
+        <input type='button' id='response' value='Load test' onclick='test()'><br>
+        <input type='button' id='response1' value='Load refGoogle' onclick='ref_Google()'><br><br>
+
+          this is a <a href ="javascript:ref_Google()">Link to Google  </a><br>
+          this is a <a href ="javascript:ref_IBM()">Link to IBM  </a><br>
+          this is a <a href ="javascript:ref_MeWe()">Link to MeWe  </a><br>
+          this is a <a href ="javascript:ref_NewsMax()">Link to NewMax  </a><br>
+          this is a <a href ="javascript:ref_RedHat()">Link to RedHat  </a><br>
+        </div>
+
+        <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="Valid CSS!" />
+            </a>
+        </p>
+
+      </body>
+
+      <footer>&copy; Copyright 2020 Richard Ernst<br>
+      # This program is free software; you can redistribute it      #
+      # and/or modify it under the terms of the GNU General Public  #
+      # License as published by the Free Software Foundation;       #
+      # either version 2 of the License, or (at your option) any    #
+      # later version.                                              #
+      #                                                             #
+      # This program is distributed in the hope that it will be     #
+      # useful, but WITHOUT ANY WARRANTY; without even the implied  #
+      # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR     #
+      # PURPOSE. See the GNU General Public License for more        #
+      # details.                                                    #
+
+      </footer>
+
+  </html>
